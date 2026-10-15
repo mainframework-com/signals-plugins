@@ -1,0 +1,57 @@
+{
+  "name": "@mainframework/dom-signals-core",
+  "version": "4.0.1",
+  "description": "Internal DOM compile source for dom-signals bundler plugins",
+  "type": "module",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mainframework-com/signals-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mainframework-com/signals-plugins/issues"
+  },
+  "homepage": "https://github.com/mainframework-com/signals-plugins#readme",
+  "author": "Terry Slack",
+  "license": "MIT",
+  "keywords": ["typescript", "signals", "dom-signals"],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist", "LICENSE", "README.md"],
+  "scripts": {
+    "prepare": "husky",
+    "clean": "rimraf dist",
+    "lint": "eslint . --max-warnings=0 --fix",
+    "lint-staged": "lint-staged",
+    "prebuild": "pnpm clean",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run"
+  },
+  "lint-staged": {
+    "*.(ts|tsx)": ["eslint --fix", "prettier --write"]
+  },
+  "dependencies": {
+    "@babel/generator": "^8.0.6",
+    "@babel/parser": "^8.0.7",
+    "@babel/traverse": "^8.0.7",
+    "@babel/types": "^8.0.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.7",
+    "globals": "^17.13.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "rimraf": "^6.1.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2",
+    "vitest": "^5.0.5"
+  }
+}
