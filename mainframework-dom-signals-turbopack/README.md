@@ -2,31 +2,34 @@
 
 **npm:** https://www.npmjs.com/package/@mainframework/dom-signals-turbopack
 
-Turbopack loader for **Workflow A** DOM wiring with [`@mainframework/signals`](https://www.npmjs.com/package/@mainframework/signals).
+Turbopack bundler integration for **Workflow A** DOM wiring when your app uses [`@mainframework/signals`](https://www.npmjs.com/package/@mainframework/signals). Register **exactly once** per app.
 
 **Source:** [mainframework-com/signals-plugins](https://github.com/mainframework-com/signals-plugins) (`mainframework-dom-signals-turbopack`)
 
-**Requires:** `@mainframework/signals` — https://www.npmjs.com/package/@mainframework/signals
+**Requires:** `@mainframework/signals` in the app — https://www.npmjs.com/package/@mainframework/signals
 
-Runtime DOM: [`@mainframework/signals` README](https://github.com/TerrySlack/mainframework-signals#readme).
-
-## When to use
-
-| Setup | Use |
-|-------|-----|
-| Next.js dev/build with **Turbopack** (`next dev --turbopack`, etc.) | This package (`/loader`) |
-| Next.js **Webpack** or Vite/Rollup app | [`@mainframework/dom-signals-unplugin`](https://www.npmjs.com/package/@mainframework/dom-signals-unplugin) instead |
-
-Do **not** register both on the same files. Register dom compile **once** per app.
-
-## Install
+Runtime DOM (Workflow B/C, `domSignal`, `useDomSignal`): [`@mainframework/signals` README](https://github.com/TerrySlack/mainframework-signals#readme).
 
 ```bash
 pnpm add @mainframework/signals @mainframework/dom-signals-turbopack
 pnpm add next
 ```
 
-**Target:** Next.js 14+ with Turbopack rules API (verify against your Next version — https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack).
+Install **Next.js** with Turbopack rules support. **Target:** Next.js 14+ (verify against your Next version — https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack).
+
+### Cross-bundler rules
+
+- Register dom compile **once** per app (no Babel dom-compile duplicate on the same files).
+- **Next.js with Turbopack** (`next dev --turbopack`, etc.): this package (`/loader`).
+- **Next.js Webpack** or **Vite / Rollup / Rspack / …:** [`@mainframework/dom-signals-unplugin`](https://www.npmjs.com/package/@mainframework/dom-signals-unplugin) instead.
+- Do **not** register this loader and unplugin on the same files.
+
+| Setup | Use |
+|-------|-----|
+| Next.js dev/build with **Turbopack** | `@mainframework/dom-signals-turbopack/loader` |
+| Next.js **Webpack** or Vite/Rollup app | `@mainframework/dom-signals-unplugin` |
+
+---
 
 ## `next.config.ts`
 
@@ -53,10 +56,6 @@ export default nextConfig;
 
 Export path: `@mainframework/dom-signals-turbopack/loader` (see package `exports`).
 
-## Single registration
-
-One loader rule set per app for dom compile. No `@mainframework/dom-signals-unplugin` on the same globs.
-
 ## Troubleshooting
 
 | Symptom | Cause | Fix |
@@ -65,4 +64,4 @@ One loader rule set per app for dom compile. No `@mainframework/dom-signals-unpl
 | No rewrite | Rules do not match files | Adjust `*.tsx` / paths |
 | API error on older Next | `turbopack.rules` unavailable | Upgrade Next or use Webpack + unplugin |
 
-See [`@mainframework/signals` README](https://github.com/TerrySlack/mainframework-signals#readme) and this package’s npm page for Workflow A behavior.
+See [`@mainframework/signals` README](https://github.com/TerrySlack/mainframework-signals#readme).

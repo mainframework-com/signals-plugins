@@ -2,22 +2,20 @@
 
 **npm:** https://www.npmjs.com/package/@mainframework/parcel-transformer-dom-signals
 
-Parcel 2 transformer for **Workflow A** DOM wiring with [`@mainframework/signals`](https://www.npmjs.com/package/@mainframework/signals). Use this package for Parcel 2 — not `@mainframework/dom-signals-unplugin`.
+Parcel 2 bundler integration for **Workflow A** DOM wiring when your app uses [`@mainframework/signals`](https://www.npmjs.com/package/@mainframework/signals). Register **exactly once** per app.
 
 **Source:** [mainframework-com/signals-plugins](https://github.com/mainframework-com/signals-plugins) (`mainframework-parcel-transformer-dom-signals`)
 
-Runtime DOM: [`@mainframework/signals` README](https://github.com/TerrySlack/mainframework-signals#readme).
+**Requires:** `@mainframework/signals` in the app — https://www.npmjs.com/package/@mainframework/signals
 
-Register dom compile **once** per app.
-
-## Install
+Runtime DOM (Workflow B/C, `domSignal`, `useDomSignal`): [`@mainframework/signals` README](https://github.com/TerrySlack/mainframework-signals#readme).
 
 ```bash
-pnpm add @mainframework/signals
-pnpm add -D @mainframework/parcel-transformer-dom-signals @parcel/plugin
+pnpm add @mainframework/signals @mainframework/parcel-transformer-dom-signals
+pnpm add -D @parcel/plugin parcel
 ```
 
-Example `package.json`:
+Install **Parcel 2** as usual. Example `package.json`:
 
 ```json
 {
@@ -32,13 +30,16 @@ Example `package.json`:
 }
 ```
 
-**npm links:**
+### Cross-bundler rules
 
-- https://www.npmjs.com/package/@mainframework/signals
+- Register dom compile **once** per app (no Babel dom-compile duplicate on the same files).
+- **Parcel 2:** this package — not `@mainframework/dom-signals-unplugin`.
+- Run this transformer **before** Parcel’s default JS/TS pipeline (`"..."` in `.parcelrc`).
+- Do **not** add a global Babel dom-compile plugin on the same files.
+
+---
 
 ## `.parcelrc`
-
-Run this transformer **before** Parcel’s default JS/TS pipeline (`"..."` keeps defaults after compile):
 
 ```json
 {
@@ -51,10 +52,6 @@ Run this transformer **before** Parcel’s default JS/TS pipeline (`"..."` keeps
   }
 }
 ```
-
-## Single registration
-
-Use only this transformer for dom compile — do not add a global Babel dom-compile plugin on the same files.
 
 ## Asset types
 

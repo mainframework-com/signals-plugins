@@ -19,6 +19,16 @@ describe("dom-compiler-unplugin webpack-loader", () => {
 
     expect(callback).toHaveBeenCalledOnce();
     const expected = compile(fixture, { filename: "/app/Page.tsx" });
+    expect(callback.mock.calls[0][0]).toBeNull();
     expect(callback.mock.calls[0][1]).toBe(expected.code);
+    expect(callback.mock.calls[0][2]).toBe(expected.map);
+  });
+
+  it("propagates compile errors", () => {
+    const callback = vi.fn();
+    expect(() =>
+      domCompilerWebpackLoader.call({ resourcePath: "/app/Broken.tsx", async: () => callback }, "{"),
+    ).toThrow();
+    expect(callback).not.toHaveBeenCalled();
   });
 });
