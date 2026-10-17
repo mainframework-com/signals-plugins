@@ -1,16 +1,17 @@
 {
   "name": "@mainframework/dom-signals-turbopack",
-  "version": "4.0.1",
+  "version": "0.9.9",
   "description": "Turbopack loader for @mainframework/signals Workflow A",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mainframework-com/signals-plugins.git"
+    "url": "git+https://github.com/mainframework-com/signals-plugins.git",
+    "directory": "mainframework-dom-signals-turbopack"
   },
   "bugs": {
     "url": "https://github.com/mainframework-com/signals-plugins/issues"
   },
-  "homepage": "https://github.com/mainframework-com/signals-plugins#readme",
+  "homepage": "https://github.com/mainframework-com/signals-plugins/tree/master/mainframework-dom-signals-turbopack#readme",
   "author": "Terry Slack",
   "license": "MIT",
   "keywords": ["typescript", "signals", "turbopack", "dom-signals"],
@@ -44,8 +45,8 @@
     "@babel/types": "^8.0.6"
   },
   "peerDependencies": {
-    "@mainframework/signals": "^4.0.1",
-    "next": ">=14.0.0"
+    "@mainframework/signals": "^4.0.2",
+    "next": ">=16.4.2"
   },
   "peerDependenciesMeta": {
     "next": {
@@ -54,7 +55,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.12.0",
+    "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.7",
     "globals": "^17.13.0",

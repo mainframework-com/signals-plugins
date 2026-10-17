@@ -1,16 +1,17 @@
 {
   "name": "@mainframework/dom-signals-unplugin",
-  "version": "4.0.1",
+  "version": "0.9.9",
   "description": "Unplugin integration for @mainframework/signals Workflow A",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mainframework-com/signals-plugins.git"
+    "url": "git+https://github.com/mainframework-com/signals-plugins.git",
+    "directory": "mainframework-dom-signals-unplugin"
   },
   "bugs": {
     "url": "https://github.com/mainframework-com/signals-plugins/issues"
   },
-  "homepage": "https://github.com/mainframework-com/signals-plugins#readme",
+  "homepage": "https://github.com/mainframework-com/signals-plugins/tree/master/mainframework-dom-signals-unplugin#readme",
   "author": "Terry Slack",
   "license": "MIT",
   "keywords": ["typescript", "signals", "unplugin", "dom-signals"],
@@ -42,17 +43,17 @@
     "@babel/parser": "^8.0.7",
     "@babel/traverse": "^8.0.7",
     "@babel/types": "^8.0.6",
-    "unplugin": "^3.0.0"
+    "unplugin": "^3.4.0"
   },
   "peerDependencies": {
-    "@mainframework/signals": "^4.0.1",
+    "@mainframework/signals": "^4.0.2",
     "@rsbuild/core": "*",
-    "@rspack/core": ">=1.0.0",
+    "@rspack/core": ">=2.2.9",
     "bun": "*",
     "esbuild": "*",
-    "rollup": ">=3.1.0",
-    "vite": ">=3.1.0",
-    "webpack": "^5.0.0"
+    "rollup": ">=4.64.9",
+    "vite": ">=8.3.4",
+    "webpack": "^5.112.0"
   },
   "peerDependenciesMeta": {
     "vite": {
@@ -79,7 +80,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.12.0",
+    "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.7",
     "globals": "^17.13.0",
@@ -87,7 +88,7 @@
     "lint-staged": "^17.6.0",
     "prettier": "^3.9.10",
     "rimraf": "^6.1.3",
-    "rollup": "^4.64.7",
+    "rollup": "^4.64.9",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.2",
     "@vitest/coverage-v8": "^5.0.5",

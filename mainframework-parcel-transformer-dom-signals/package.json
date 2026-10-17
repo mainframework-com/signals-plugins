@@ -1,16 +1,17 @@
 {
   "name": "@mainframework/parcel-transformer-dom-signals",
-  "version": "4.0.1",
+  "version": "0.9.9",
   "description": "Parcel transformer for @mainframework/signals Workflow A",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mainframework-com/signals-plugins.git"
+    "url": "git+https://github.com/mainframework-com/signals-plugins.git",
+    "directory": "mainframework-parcel-transformer-dom-signals"
   },
   "bugs": {
     "url": "https://github.com/mainframework-com/signals-plugins/issues"
   },
-  "homepage": "https://github.com/mainframework-com/signals-plugins#readme",
+  "homepage": "https://github.com/mainframework-com/signals-plugins/tree/master/mainframework-parcel-transformer-dom-signals#readme",
   "author": "Terry Slack",
   "license": "MIT",
   "keywords": ["typescript", "signals", "parcel", "dom-signals"],
@@ -40,13 +41,13 @@
     "@babel/types": "^8.0.6"
   },
   "peerDependencies": {
-    "@mainframework/signals": "^4.0.1",
-    "@parcel/plugin": "^2.0.0"
+    "@mainframework/signals": "^4.0.2",
+    "@parcel/plugin": "^2.16.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@parcel/plugin": "^2.16.0",
-    "eslint": "^10.12.0",
+    "@parcel/plugin": "^2.16.4",
+    "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.7",
     "globals": "^17.13.0",
