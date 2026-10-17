@@ -1,6 +1,6 @@
 {
   "name": "@mainframework/parcel-transformer-dom-signals",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "Parcel transformer for @mainframework/signals Workflow A",
   "type": "module",
   "repository": {
@@ -14,14 +14,24 @@
   "homepage": "https://github.com/mainframework-com/signals-plugins/tree/master/mainframework-parcel-transformer-dom-signals#readme",
   "author": "Terry Slack",
   "license": "MIT",
-  "keywords": ["typescript", "signals", "parcel", "dom-signals"],
+  "keywords": [
+    "typescript",
+    "signals",
+    "parcel",
+    "dom-signals"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist", "vendor/dom-signals-core", "LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "vendor/dom-signals-core",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "prepare": "husky",
     "clean": "rimraf dist",
@@ -32,7 +42,10 @@
     "test": "pnpm --dir ../mainframework-dom-signals-core run build && node ../mainframework-dom-signals-core/scripts/copy-dist.mjs vendor/dom-signals-core && vitest run --coverage"
   },
   "lint-staged": {
-    "*.(ts|tsx)": ["eslint --fix", "prettier --write"]
+    "*.(ts|tsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@babel/generator": "^8.0.6",
