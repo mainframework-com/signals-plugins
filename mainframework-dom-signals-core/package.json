@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Internal DOM compile source for dom-signals bundler plugins",
   "type": "module",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mainframework-com/signals-plugins.git",
