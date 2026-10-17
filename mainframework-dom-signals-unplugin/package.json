@@ -1,6 +1,6 @@
 {
   "name": "@mainframework/dom-signals-unplugin",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "description": "Unplugin integration for @mainframework/signals Workflow A",
   "type": "module",
   "repository": {
@@ -14,7 +14,12 @@
   "homepage": "https://github.com/mainframework-com/signals-plugins/tree/master/mainframework-dom-signals-unplugin#readme",
   "author": "Terry Slack",
   "license": "MIT",
-  "keywords": ["typescript", "signals", "unplugin", "dom-signals"],
+  "keywords": [
+    "typescript",
+    "signals",
+    "unplugin",
+    "dom-signals"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -25,7 +30,12 @@
       "types": "./dist/webpack-loader.d.ts"
     }
   },
-  "files": ["dist", "vendor/dom-signals-core", "LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "vendor/dom-signals-core",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "prepare": "husky",
     "clean": "rimraf dist",
@@ -36,7 +46,10 @@
     "test": "pnpm --dir ../mainframework-dom-signals-core run build && node ../mainframework-dom-signals-core/scripts/copy-dist.mjs vendor/dom-signals-core && vitest run --coverage"
   },
   "lint-staged": {
-    "*.(ts|tsx)": ["eslint --fix", "prettier --write"]
+    "*.(ts|tsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@babel/generator": "^8.0.6",
