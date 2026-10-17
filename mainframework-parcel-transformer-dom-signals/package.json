@@ -40,10 +40,6 @@
     "@babel/traverse": "^8.0.7",
     "@babel/types": "^8.0.6"
   },
-  "peerDependencies": {
-    "@mainframework/signals": "^4.0.2",
-    "@parcel/plugin": "^2.16.4"
-  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@parcel/plugin": "^2.16.4",

@@ -45,39 +45,6 @@
     "@babel/types": "^8.0.6",
     "unplugin": "^3.4.0"
   },
-  "peerDependencies": {
-    "@mainframework/signals": "^4.0.2",
-    "@rsbuild/core": "*",
-    "@rspack/core": ">=2.2.9",
-    "bun": "*",
-    "esbuild": "*",
-    "rollup": ">=4.64.9",
-    "vite": ">=8.3.4",
-    "webpack": "^5.112.0"
-  },
-  "peerDependenciesMeta": {
-    "vite": {
-      "optional": true
-    },
-    "rollup": {
-      "optional": true
-    },
-    "webpack": {
-      "optional": true
-    },
-    "esbuild": {
-      "optional": true
-    },
-    "bun": {
-      "optional": true
-    },
-    "@rspack/core": {
-      "optional": true
-    },
-    "@rsbuild/core": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.13.0",

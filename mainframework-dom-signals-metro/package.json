@@ -53,11 +53,6 @@
     "@babel/traverse": "^8.0.7",
     "@babel/types": "^8.0.6"
   },
-  "peerDependencies": {
-    "@mainframework/signals": "^4.0.2",
-    "metro": ">=0.87.1",
-    "metro-react-native-babel-transformer": ">=0.77.0"
-  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.13.0",
